@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>I come from template!!</title>
+
+        {% load static %}
+        <script type="text/javascript" src="{% static 'jquery/jquery-3.6.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'bootstrap-5.2.3-dist/js/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
+
+        <style>
+            body {
+              background-color: lightyellow;
+            }
+
+            em {
+              color: LightSeaGreen;
+            }
+
+            #pTest {
+                color: red;
+            }
+
+            .itemCls {
+                color: blue;
+            }
+
+            table tr th {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <main>
+                <h1>Hello World!</h1>
+                <em>{{ current_time }}</em>
+                <br>
+                <ul>
+                    <li class="itemCls">Item 1</li>
+                    <li class="itemCls">Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+                <a href="https://www.google.com.tw/">click me</a>
+                <br>
+                <a class="btn btn-danger" href="javascript:doChgColor();">change color</a>
+
+                <div>
+                    <p id="pTest">123</p>
+                    <p>456</p>
+                </div>
+                <table>
+                    <tr>
+                        <th>column 1</th>
+                        <th>column 2</th>
+                    </tr>
+                    <tr>
+                        <td>1.1</td>
+                        <td>2.1</td>
+                    </tr>
+                    <tr>
+                        <td>1.2</td>
+                        <td>2.2</td>
+                    </tr>
+                </table>
+                <input type="text" id="username" name="username" placeholder="Your username" >
+                <input type="password" id="password" name="password" placeholder="Your password" >
+            </main>
+        </form>
+    </body>
+
+    <script>
+
+    </script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign-in</title>
+
+        {% load static %}
+        <script type="text/javascript" src="{% static 'jquery/jquery-3.6.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'bootstrap-5.2.3-dist/js/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
+
+        <style>
+            .form-signin {
+                max-width: 350px;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="thisForm">
+            {% csrf_token %}
+            <main class="container m-auto form-signin">
+                <div class="alert alert-success my-3" role="alert">
+                    <div class="text-center">
+                        <h1>Sign-in</h1>
+                    </div>
+                </div>
+                <div class="form-floating mt-2 mb-1">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Please input your username">
+                    <label for="username">username</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Please input your password">
+                    <label for="password">password</label>
+                </div>
+                <p class="text-center">
+                    <button class="btn btn-primary" id="signinBtn">GO</button>
+                </p>
+                <p class="text-center">
+                    <em>Current Time: {{ current_time }}</em>
+                </p>
+            </main>
+        </form>
+    </body>
+    <script>
+<!--        $("#signinBtn").click(function() {-->
+<!--            $("#thisForm").attr("action", "{% url 'do_get_signin_log' %}");-->
+<!--            $("#thisForm").submit();-->
+<!--        });-->
+        $("#signinBtn").click(function() {
+            $("#thisForm").attr("action", "{% url 'do_signin' %}");
+            $("#thisForm").attr("method", "POST");
+            $("#thisForm").submit();
+        });
+    </script>
+</html>
